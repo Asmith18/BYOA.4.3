@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Valorant Agents-->
+        <!--Agents-->
         <scene sceneID="6IO-gQ-cbz">
             <objects>
                 <tableViewController id="bpN-Fn-75t" customClass="AgentTableViewController" customModule="ValorantAPI" customModuleProvider="target" sceneMemberID="viewController">
@@ -41,7 +41,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="rvB-El-55d" kind="show" id="UN6-oK-yn2"/>
+                                    <segue destination="rvB-El-55d" kind="show" identifier="toAgentDetails" id="UN6-oK-yn2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -50,7 +50,7 @@
                             <outlet property="delegate" destination="bpN-Fn-75t" id="d3U-Q6-e91"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Valorant Agents" id="c9g-RD-rJ2"/>
+                    <navigationItem key="navigationItem" title="Agents" id="c9g-RD-rJ2"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HS5-sq-uW4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,7 +67,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="115" translatesAutoresizingMaskIntoConstraints="NO" id="Tnh-nW-2E2">
                                 <rect key="frame" x="8" y="138" width="398" height="156"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY9-vO-ikM">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desc" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AY9-vO-ikM">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -91,6 +91,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eYb-CV-HeP"/>
+                    <connections>
+                        <outlet property="descTextLabel" destination="AY9-vO-ikM" id="LUm-Be-8Xy"/>
+                        <outlet property="roleTextLabel" destination="LWZ-kn-ZFJ" id="Cso-Uy-ZcK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UTd-Up-VdO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

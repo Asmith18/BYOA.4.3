@@ -30,8 +30,9 @@ class AgentTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "agentCell", for: indexPath)
-        
-        
+        let agent = agentsArray[indexPath.row]
+        cell.textLabel?.text = agent.displayName
+        cell.detailTextLabel?.text = agent.role
         
         return cell
     }
@@ -72,14 +73,19 @@ class AgentTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toAgentDetails" {
+            if let index = tableView.indexPathForSelectedRow {
+                if let destination = segue.destination as? AgentDetailsViewController {
+                    let agent = agentsArray[index.row]
+                    destination.agent = agent
+                }
+            }
+        }
     }
-    */
 
 }
